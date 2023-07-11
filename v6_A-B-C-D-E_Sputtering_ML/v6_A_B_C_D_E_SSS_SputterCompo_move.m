@@ -3,10 +3,9 @@ clc; clear all;
 %%
 comb_D_E      = nchoosek([{'Co'} {'V'} {'Mn'} {'Mo'} {'Cu'} {'Nb'} {'W'} {'Ti'} {'Al'} {'Si'},{'Ta'}], 2);
 
-source_folder   = '/../';
-dst_folder      = '/../v6_A-B-C-D-E_Sputtering_ML/';
+source_folder   = '/Users/ywu/InSync/2021_MPIE/2021-12_H Diffusion/Matlab Toolbox HEA/v6_A-B-C-D-E_Sputtering_master/';
+dst_folder      = '/Users/ywu/InSync/2021_MPIE/2021-12_H Diffusion/Matlab Toolbox HEA/v6_A-B-C-D-E_Sputtering_ML_master/';
 
-%%
 
 for comb_i = 1: length(comb_D_E)
 
