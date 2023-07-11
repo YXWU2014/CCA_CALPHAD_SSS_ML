@@ -1,7 +1,8 @@
 clc; clear all;
 
 comb_D_E     = nchoosek([{'Co'} {'V'} {'Mn'} {'Mo'} {'Cu'} {'Nb'} {'W'} {'Ti'} {'Al'} {'Si'},{'Ta'}],2);
-current_path = 'H:\Matlab Toolbox HEA\v6_A-B-C-D-E_Sputtering_master\';
+current_path = pwd;
+[parentDirectory, ~, ~] = fileparts(pwd);
 
 for i = 1: length(comb_D_E)
     % i =1;
@@ -11,22 +12,23 @@ for i = 1: length(comb_D_E)
     % specify directory name
     subdirName = ['v6_', comb_A_B_C_D_E_temp, '_Sputtering'];
     
+     % Destination folder path
+    destFolderPath = fullfile(parentDirectory, subdirName);
+    
     % check if directory already exists
-    if exist(subdirName, 'dir') == 7
+    if exist(destFolderPath, 'dir') == 7
         fprintf([subdirName, ' already exists.\n']);
     else
-        % create new directory
-        mkdir(subdirName);
+          
+    % create new directory
+        mkdir(destFolderPath);
         fprintf([subdirName, ' created.\n']);
     end
     
     %% copy the .m file
     % Source file path
-    srcFilePath_1 = [current_path 'v6_A_B_C_D_E_SSS_SputterCompo_master.m'];
-    
-    % Destination folder path
-    destFolderPath = [current_path subdirName];
-    
+    srcFilePath_1 = fullfile(current_path, 'v6_A_B_C_D_E_SSS_SputterCompo_master.m');
+     
     % New file name
     newFileName_1  = ['v6_', comb_A_B_C_D_E_temp, '_SSS_SputterCompo.m'];
     destFilePath_1 = fullfile(destFolderPath, newFileName_1);
@@ -36,11 +38,8 @@ for i = 1: length(comb_D_E)
     
     %% copy the .dat file
     % Source file path
-    srcFilePath_2 = [current_path 'SputteringCompoMapNormalised.dat'];
-    
-    % Destination folder path
-    destFolderPath = [current_path subdirName];
-    
+    srcFilePath_2 = fullfile(current_path, 'SputteringCompoMapNormalised.dat');
+     
     % New file name
     newFileName_2  = 'SputteringCompoMapNormalised.dat';
     destFilePath_2 = fullfile(destFolderPath, newFileName_2);
@@ -50,7 +49,6 @@ for i = 1: length(comb_D_E)
     
     %% batch run
     cd(destFolderPath);
-    %  delete SSS_byCompo.xlsx
     job = batch(newFileName_1(1:end-2));
     fprintf([newFileName_1(1:end-2), ' job submitted.\n']);
     cd('..');
