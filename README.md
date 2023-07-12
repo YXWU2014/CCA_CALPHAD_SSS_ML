@@ -4,21 +4,57 @@ need some description about this repository
 
 [TOC]
 
-### Maintain the repository `CCA_CALPHAD_SSS_ML` and its dependencies `CCA_representation_ML`
+### Maintain the repository `CCA_CALPHAD_SSS_ML` and its submodule `CCA_representation_ML`
 
-**pull the repository to the local folder**
-
-```git
-git clone https://github.com/YXWU2014/CCA_CALPHAD_SSS_ML.git
+```bash
+|-- .CCA_CALPHAD_SSS_ML
+    |-- CCA_representation_ML
+    |-- ...
 ```
 
-**add the submodule**
 
-```python
-cd CCA_representation_ML
+
+**Pull the repository to the local folder**
+
+```bash
+git clone https://github.com/YXWU2014/CCA_CALPHAD_SSS_ML.git
+cd CCA_CALPHAD_SSS_ML
+```
+
+**Add the submodule**
+
+```bash
 git submodule add https://github.com/YXWU2014/CCA_representation_ML.git
 ```
 
-**Initialize and fetch the submodule**:
+**Initialise and fetch the submodule**
 
+```bash 
 git submodule update --init --recursive
+```
+
+**Commit and push local changes to GitHub**
+
+```bash
+cd CCA_CALPHAD_SSS_ML
+cd CCA_representation_ML
+git add -A
+git commit -m "commit message"
+git push origin main
+```
+
+```bash
+cd ..
+git add  -A
+git commit -m "Updated submodule"
+git push origin main
+```
+
+**Pull the latest repository to the local folder**
+
+```bash
+cd CCA_CALPHAD_SSS_ML
+git pull origin main
+git submodule update --init --recursive
+```
+
