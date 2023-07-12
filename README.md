@@ -49,10 +49,13 @@ git commit -m "Updated submodule"
 git push origin main
 ```
 
-**Pull the latest repository to the local folder**
+**Pull the latest repository to the local folder (point to `main` branch)**
 
 ```bash
 cd CCA_CALPHAD_SSS_ML
 git pull origin main
 git submodule update --recursive
+
+cd CCA_representation_ML
+git checkout main
 ```
