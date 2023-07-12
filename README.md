@@ -20,7 +20,7 @@ git clone https://github.com/YXWU2014/CCA_CALPHAD_SSS_ML.git
 
 **add the submodule**
 
-```
+```python
 cd CCA_representation_ML
 git submodule add https://github.com/YXWU2014/CCA_representation_ML.git
 ```
