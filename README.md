@@ -12,8 +12,6 @@ need some description about this repository
     |-- ...
 ```
 
-
-
 **Pull the repository to the local folder**
 
 ```bash
@@ -56,6 +54,5 @@ git push origin main
 ```bash
 cd CCA_CALPHAD_SSS_ML
 git pull origin main
-git submodule update --init --recursive
+git submodule update --recursive
 ```
-
