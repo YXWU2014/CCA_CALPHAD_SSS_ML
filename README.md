@@ -7,7 +7,7 @@ need some description about this repository
 ### Maintain your repository `CCA_CALPHAD_SSS_ML` and its submodule `CCA_representation_ML`
 
 ```bash
-|-- .CCA_CALPHAD_SSS_ML
+|-- CCA_CALPHAD_SSS_ML
     |-- CCA_representation_ML
     |-- ...
 ```
