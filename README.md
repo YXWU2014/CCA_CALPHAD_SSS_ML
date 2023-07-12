@@ -54,7 +54,6 @@ git push origin main
 ```bash
 cd CCA_CALPHAD_SSS_ML
 git pull origin main
-git submodule update --remote --recursive
 
 cd CCA_representation_ML
 git checkout main
