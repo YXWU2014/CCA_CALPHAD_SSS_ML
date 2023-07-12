@@ -31,6 +31,7 @@ git submodule add https://github.com/YXWU2014/CCA_representation_ML.git
 
 ```bash 
 git submodule update --init --recursive
+git checkout main
 ```
 
 **Commit and push local changes to GitHub**
