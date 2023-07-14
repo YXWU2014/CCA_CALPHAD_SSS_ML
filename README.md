@@ -53,6 +53,9 @@ git push origin main
 
 ```bash
 cd CCA_CALPHAD_SSS_ML
+```
+
+```bash
 git pull origin main
 
 cd CCA_representation_ML
