@@ -32,7 +32,7 @@ git submodule update --init --recursive
 git checkout main
 ```
 
-**Commit and push local changes to GitHub**
+<!-- **Commit and push local changes to GitHub**
 
 ```bash
 cd CCA_CALPHAD_SSS_ML
@@ -62,4 +62,4 @@ cd CCA_representation_ML
 git checkout main
 git pull origin main
 cd ..
-```
+``` -->
