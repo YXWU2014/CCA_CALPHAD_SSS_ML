@@ -2,21 +2,18 @@
 
 need some description about this repository
 
+the purpose of this repository are:
 
+- Batch calculation for quinary alloys A-B-C-D-E via computational thermodynamics
 
+  - model the phase stability under full equilibrium and minimum Gibbs energy conditions
+  - model the solid solution strengthening
 
+- Evaluate hardness and corrosion pitting potential via the multitask neural network model (as a submodule `CCA_representation_ML`)
 
-the purpose of this repository is to create a 
+- the composition sampling takes the represnetation of combintorial physical vapour depostion ``
 
-
-
-
-
-
-
-##  Directory structure
-
-the 
+## Directory structure
 
 ```bash
 |-- CCA_CALPHAD_SSS_ML
@@ -27,10 +24,9 @@ the
 |-- v6_Fe_Cr_Ni_Al_Ta_Sputtering
 |-- ...
 
-
 ```
 
-
+`CCA_representation_ML`: the machine learning submodule maintained in a different repository
 
 ## Pull the repositories `CCA_CALPHAD_SSS_ML` and its submodule `CCA_representation_ML`
 
