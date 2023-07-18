@@ -1,7 +1,5 @@
 # CCA_CALPHAD_SSS_ML
 
-need some description about this repository
-
 the purpose of this repository are:
 
 - Batch calculation for quinary alloys A-B-C-D-E via computational thermodynamics
@@ -9,16 +7,22 @@ the purpose of this repository are:
   - model the phase stability under full equilibrium and minimum Gibbs energy conditions
   - model the solid solution strengthening
 
-- Evaluate hardness and corrosion pitting potential via the multitask neural network model (as a submodule `CCA_representation_ML`)
+- Evaluate hardness and corrosion pitting potential via the multitask neural network model (based on a submodule `CCA_representation_ML`)
 
-- the composition sampling takes the represnetation of combintorial physical vapour depostion ``
+- the composition sampling takes the represnetation of combintorial physical vapour depostion `SputteringCompoMapNormalised.dat` and permutation of different mixing of neighbouring elements
+
+
+
+![sns_plot_30](./sns_plot_30.png)
+
+
 
 ## Directory structure
 
 ```bash
 |-- CCA_CALPHAD_SSS_ML
     |-- CCA_representation_ML
-    |-- ...
+    |--
 
 |-- v6_Fe_Cr_Ni_Al_Si_Sputtering
 |-- v6_Fe_Cr_Ni_Al_Ta_Sputtering
