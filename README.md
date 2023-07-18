@@ -13,9 +13,25 @@ the purpose of this repository are:
 
 
 
+
+
+The computation results can be condensed into, e.g. below plots showing the FCC alloy formation tendency under different thermdynamic evaluations (different alloy fabrication method) and the property evaluation by physical-based models to evalutate solid solution strengtehtng and also the properties computed from neural network models.
+
+ 
+
 ![sns_plot_30](./sns_plot_30.png)
 
 
+
+
+
+
+
+![KW99_plot_Hardness](./v6_A-B-C-D-E_Sputtering_ML/v6_A-B-C-D-E_Sputtering_ML_KW/KW99_plot_Hardness.png)
+
+![KW99_plot_Corrosion](./v6_A-B-C-D-E_Sputtering_ML/v6_A-B-C-D-E_Sputtering_ML_KW/KW99_plot_Corrosion.png)
+
+![KW99_plot_SSS](./v6_A-B-C-D-E_Sputtering_ML/v6_A-B-C-D-E_Sputtering_ML_KW/KW99_plot_SSS.png)
 
 ## Directory structure
 
