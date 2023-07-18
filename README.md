@@ -2,9 +2,37 @@
 
 need some description about this repository
 
-[TOC]
 
-### Maintain your repository `CCA_CALPHAD_SSS_ML` and its submodule `CCA_representation_ML`
+
+
+
+the purpose of this repository is to create a 
+
+
+
+
+
+
+
+##  Directory structure
+
+the 
+
+```bash
+|-- CCA_CALPHAD_SSS_ML
+    |-- CCA_representation_ML
+    |-- ...
+
+|-- v6_Fe_Cr_Ni_Al_Si_Sputtering
+|-- v6_Fe_Cr_Ni_Al_Ta_Sputtering
+|-- ...
+
+
+```
+
+
+
+## Pull the repositories `CCA_CALPHAD_SSS_ML` and its submodule `CCA_representation_ML`
 
 ```bash
 |-- CCA_CALPHAD_SSS_ML
