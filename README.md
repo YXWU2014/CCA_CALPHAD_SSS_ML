@@ -1,32 +1,39 @@
-# Harnessing representation in exploring compositioanl complex alloys
+# Harnessing representation in exploring compositional complex alloys
 
-the purpose of this repository are:
+This repository provides a platform for performing calculations and evaluations on quinary alloys A-B-C-D-E using computational thermodynamics and machine learning techniques. It focuses on modelling the phase stability and solid solution strengthening, along with hardness and corrosion pitting potential evaluation.
 
-- Batch calculation for quinary alloys A-B-C-D-E via computational thermodynamics
 
-  - model the phase stability under full equilibrium and minimum Gibbs energy conditions
-  - model the solid solution strengthening
+## Objectives
 
-- Evaluate hardness and corrosion pitting potential via the multitask neural network model (based on a submodule `CCA_representation_ML`)
+This repository serves to:
 
-- the composition sampling takes the represnetation of combintorial physical vapour depostion `SputteringCompoMapNormalised.dat` and permutation of different mixing of neighbouring elements
+- Perform batch calculations for quinary alloys (A-B-C-D-E) using computational thermodynamics.
+  - Model phase stability under full equilibrium and minimum Gibbs energy conditions.
+  - Model solid solution strengthening for the targeted alloys.
+- Evaluate hardness and corrosion pitting potential using a multitask neural network model (based on the `CCA_representation_ML` submodule).
+- Facilitate compositional sampling that takes the representation of combinatorial physical vapor deposition (`SputteringCompoMapNormalised.dat`) and permutations of different mixes of neighbouring elements.
 
-The computation results can be condensed into, e.g. below plots showing the FCC alloy formation tendency under different thermdynamic evaluations (different alloy fabrication method) and the property evaluation by physical-based models to evalutate solid solution strengtehtng and also the properties computed from neural network models.
+## Visuals
+
+The computational results can be illustrated through visuals such as the plots below, demonstrating the FCC alloy formation tendency under varying thermodynamic evaluations and property evaluations by physical-based models. They also show the solid solution strengthening and the properties computed from the neural network models.
+
 
 ![sns_plot_30](./sns_plot_30.png)
 
 ![plot_phase stability](<v6_A-B-C-D-E_Sputtering_ML/v6_A-B-C-D-E_Sputtering_ML_Exp/plot_phase stability.png>)
 
 ## Citation
+For more information, refer to:
 
 - Wu et al., "Harnessing representation in exploring compositional complex alloys [under review]", 2023.
 
-## Directory structure and functionalities
+## Repository Structure and Features
+
+The directory structure and functionalities are described as follows:
+
 
 ```bash
 |-- CCA_CALPHAD_SSS_ML
-
-    <#### phase stability and solid solution strengthening calculation>
 
     |-- v6_A_B_C_D_E_Gmin_FullEquil_SputterCompo_master.m
     |-- v6_A_B_C_D_E_SSS_SputterCompo_master.m
@@ -52,12 +59,15 @@ The computation results can be condensed into, e.g. below plots showing the FCC 
 ```
 
 #### phase stability and solid solution strengthening calculation
+`v6_A_B_C_D_E_Gmin_FullEquil_SputterCompo_master.m` performs calculations of phase stability under full equilibrium and minimum Gibbs energy, aiming at obtaining FCC alloys.
+`v6_A_B_C_D_E_SSS_SputterCompo_master.m` models the solid solution strengthening for the FCC phase under the same sampled compositions.
 
-`v6_A_B_C_D_E_Gmin_FullEquil_SputterCompo_master.m` computes the phase stability under full equilibrium and minimum Gibbs energy, with an emphasis on obtaining FCC alloys. `v6_A_B_C_D_E_SSS_SputterCompo_master.m` computes the solid solution strengthening for the FCC phase under the same sampled compositions. The composition takes a
+#### Machine Learning Submodule
+`CCA_representation_ML`: This machine learning submodule, maintained in a separate repository, is utilized for evaluating hardness and corrosion pitting potential.
 
-`CCA_representation_ML`: the machine learning submodule maintained in a different repository
-
+#### Plotting
 `sns_plot.ipynb` to generate summary plots
+
 
 ## Download the repositories `CCA_CALPHAD_SSS_ML` and its submodule `CCA_representation_ML` to your local drive
 
