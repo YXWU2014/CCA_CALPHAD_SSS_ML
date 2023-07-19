@@ -15,7 +15,7 @@ The computation results can be condensed into, e.g. below plots showing the FCC 
 
 ![sns_plot_30](./sns_plot_30.png)
 
-![plot_phase stability](<v6_A-B-C-D-E_Sputtering_ML/v6_A-B-C-D-E_Sputtering_ML_KW/plot_phase stability.png>)
+![plot_phase stability](<v6_A-B-C-D-E_Sputtering_ML/v6_A-B-C-D-E_Sputtering_ML_Exp/plot_phase stability.png>)
 
 ## Citation
 
@@ -90,18 +90,20 @@ git checkout main
 <!-- **Commit and push local changes to GitHub**
 
 ```bash
-cd CCA_CALPHAD_SSS_ML
+
 cd CCA_representation_ML
 git add -A
 git commit -m "update"
 git push origin main
-```
 
-```bash
 cd ..
 git add  -A
 git commit -m "Updated submodule"
 git push origin main
+```
+
+```bash
+
 ```
 
 **Pull the latest repository to the local folder (point to `main` branch)**
