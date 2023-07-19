@@ -59,7 +59,7 @@ The computation results can be condensed into, e.g. below plots showing the FCC 
 
 `sns_plot.ipynb` to generate summary plots
 
-## Pull the repositories `CCA_CALPHAD_SSS_ML` and its submodule `CCA_representation_ML`
+## Develop your own repositories `CCA_CALPHAD_SSS_ML` and its submodule `CCA_representation_ML`
 
 ```bash
 |-- CCA_CALPHAD_SSS_ML
