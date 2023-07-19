@@ -1,4 +1,4 @@
-# CCA_CALPHAD_SSS_ML
+# Harnessing representation in exploring compositioanl complex alloys
 
 the purpose of this repository are:
 
@@ -120,6 +120,6 @@ cd CCA_representation_ML
 git checkout main
 git pull origin main
 cd ..
-``` -->
 
 ```
+``` -->
