@@ -15,6 +15,8 @@ The computation results can be condensed into, e.g. below plots showing the FCC 
 
 ![sns_plot_30](./sns_plot_30.png)
 
+![plot_phase stability](./v6_A-B-C-D-E_Sputtering_ML/v6_A-B-C-D-E_Sputtering_ML_KW/plot_phase stability.png)
+
 ## Citation
 
 - Wu et al., "Harnessing representation in exploring compositional complex alloys [under review]", 2023.
@@ -33,7 +35,7 @@ The computation results can be condensed into, e.g. below plots showing the FCC 
     |-- v6_A_B_C_D_E_SSS_SputterCompo_batch.m
 
 
-
+   
 
 
 
