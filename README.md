@@ -59,7 +59,7 @@ The computation results can be condensed into, e.g. below plots showing the FCC 
 
 `sns_plot.ipynb` to generate summary plots
 
-## Develop your own repositories `CCA_CALPHAD_SSS_ML` and its submodule `CCA_representation_ML`
+## Download the repositories `CCA_CALPHAD_SSS_ML` and its submodule `CCA_representation_ML` to your local drive
 
 ```bash
 |-- CCA_CALPHAD_SSS_ML
@@ -90,7 +90,11 @@ git checkout main
 <!-- **Commit and push local changes to GitHub**
 
 ```bash
+cd CCA_CALPHAD_SSS_ML
 
+```
+
+```bash
 cd CCA_representation_ML
 git add -A
 git commit -m "update"
@@ -100,10 +104,6 @@ cd ..
 git add  -A
 git commit -m "Updated submodule"
 git push origin main
-```
-
-```bash
-
 ```
 
 **Pull the latest repository to the local folder (point to `main` branch)**
@@ -120,3 +120,5 @@ git checkout main
 git pull origin main
 cd ..
 ``` -->
+
+```
