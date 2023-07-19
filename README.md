@@ -62,9 +62,10 @@ The computation results can be condensed into, e.g. below plots showing the FCC 
 ## Download the repositories `CCA_CALPHAD_SSS_ML` and its submodule `CCA_representation_ML` to your local drive
 
 ```bash
-|-- CCA_CALPHAD_SSS_ML
-    |-- CCA_representation_ML
-    |-- ...
+|-- your local drive
+    |-- CCA_CALPHAD_SSS_ML
+        |-- CCA_representation_ML
+        |-- ...
 ```
 
 **Pull the repository to the local folder**
