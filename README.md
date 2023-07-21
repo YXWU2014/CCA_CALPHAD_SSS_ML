@@ -52,8 +52,8 @@ The directory structure and functionalities are described as follows:
 
     |-- sns_plot.ipynb
 
-|-- v6_Fe_Cr_Ni_Al_Si_Sputtering
-|-- v6_Fe_Cr_Ni_Al_Ta_Sputtering
+|-- v6_Fe_Cr_Ni_Al_Si_Sputtering (not in this repository)
+|-- v6_Fe_Cr_Ni_Al_Ta_Sputtering (not in this repository)
 |-- ...
 
 ```
