@@ -69,6 +69,19 @@ The directory structure and functionalities are described as follows:
 
 `sns_plot.ipynb` to generate summary plots
 
+## tested working environment
+
+```bash
+conda create --name tf_1-env python=3.7
+conda activate tf_1-env
+
+pip install --upgrade pip
+pip install tensorflow==1.14
+
+pip install scikit-learn pandas matplotlib seaborn shap
+
+```
+
 ## Download the repositories `CCA_CALPHAD_SSS_ML` and its submodule `CCA_representation_ML` to your local drive
 
 ```bash
@@ -108,7 +121,7 @@ cd CCA_CALPHAD_SSS_ML
 ```bash
 cd CCA_representation_ML
 git add -A
-git commit -m "update"
+git commit -m "update BO search"
 git push origin main
 
 cd ..
