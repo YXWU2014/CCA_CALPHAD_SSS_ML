@@ -121,7 +121,7 @@ cd CCA_CALPHAD_SSS_ML
 ```bash
 cd CCA_representation_ML
 git add -A
-git commit -m "update BO search"
+git commit -m "update SHAP"
 git push origin main
 
 cd ..
