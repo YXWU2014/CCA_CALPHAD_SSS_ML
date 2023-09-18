@@ -121,12 +121,12 @@ cd CCA_CALPHAD_SSS_ML
 ```bash
 cd CCA_representation_ML
 git add -A
-git commit -m "improve model explainer"
+git commit -m "improve explainer plotting and tc-python"
 git push origin main
 
 cd ..
 git add  -A
-git commit -m "Updated submodule"
+git commit -m "update readme"
 git push origin main
 ```
 
