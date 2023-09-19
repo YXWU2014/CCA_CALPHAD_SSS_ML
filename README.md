@@ -121,7 +121,7 @@ cd CCA_CALPHAD_SSS_ML
 ```bash
 cd CCA_representation_ML
 git add -A
-git commit -m "improve explainer plotting and tc-python"
+git commit -m "update the tc function"
 git push origin main
 
 cd ..
