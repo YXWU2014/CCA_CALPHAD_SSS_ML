@@ -44,6 +44,8 @@ for permu_i = 1: size(group,1)
         subplot(1, 5, subplot_j)
         scatter(PVD_compo(:,1), PVD_compo(:,2), 200, PVD_compo(:, subplot_j+2), "filled")
         colorbar;
+        ylabel(cb, 'mole fraction', 'FontSize', 13);  % Add label to colorbar and set font size
+        cb.FontSize = 13;  % Adjust the font size value as needed
         title(char(group(permu_i, subplot_j)),'Interpreter', 'none');
         xlabel('position x');
         ylabel('position y');
