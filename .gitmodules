@@ -1,0 +1,3 @@
+[submodule "CCA_representation_ML"]
+	path = CCA_representation_ML
+	url = https://github.com/YXWU2014/CCA_representation_ML.git
