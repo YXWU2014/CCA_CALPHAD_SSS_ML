@@ -101,7 +101,7 @@ cd CCA_CALPHAD_SSS_ML
 **Add the submodule**
 
 ```bash
-git submodule add https://github.com/YXWU2014/CCA_representation_ML.git
+git submodule add https://github.com/YXWU2014/CCA_representation_ML.git CCA_representation_ML
 ```
 
 **Initialise and fetch the submodule**
