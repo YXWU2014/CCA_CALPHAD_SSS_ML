@@ -121,9 +121,7 @@ cd CCA_CALPHAD_SSS_ML
 ```bash
 cd CCA_representation_ML
 git add -A
-git commit -m "update the molar volume calculations"
-
-
+git commit -m "update conflicts"
 git push origin main
 
 cd ..

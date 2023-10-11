@@ -1,1 +1,5 @@
-v6_A-B-C-D-E_Sputtering/
+# Ignore everything under v6_A-B-C-D-E_Sputtering/
+v6_A-B-C-D-E_Sputtering/*
+
+# Except folders ending with Si_Sputtering
+!v6_A-B-C-D-E_Sputtering/*Al_Si_Sputtering/
