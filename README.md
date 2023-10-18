@@ -121,12 +121,12 @@ cd CCA_CALPHAD_SSS_ML
 ```bash
 cd CCA_representation_ML
 git add -A
-git commit -m "update conflicts"
+git commit -m "update pdf formating"
 git push origin main
 
 cd ..
 git add  -A
-git commit -m "update v6_A-B-C-D-E_Sputtering"
+git commit -m "update pdf formating"
 git push origin main
 ```
 
