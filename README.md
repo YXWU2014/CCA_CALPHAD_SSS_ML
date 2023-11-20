@@ -126,7 +126,7 @@ git push origin main
 
 cd ..
 git add  -A
-git commit -m "update"
+git commit -m "update sns plot"
 git push origin main
 ```
 
