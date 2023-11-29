@@ -4,20 +4,20 @@ import os
 import random
 from multiprocessing import Pool
 
-# Improved Fibonacci function to be more CPU-bound
+# More demanding CPU-bound task
 def fibonacci(n):
     a, b = 0, 1
     for _ in range(n):
         a, b = b, a + b
     return a
 
-# Memory-intensive task: Generating and sorting a large list
+# More demanding memory-intensive task
 def memory_intensive_task(size):
     random_list = [random.random() for _ in range(size)]
     random_list.sort()
     return True
 
-# I/O-bound task: Writing and reading a large file
+# More demanding I/O-intensive task
 def io_intensive_task(size):
     filename = f'tempfile_{os.getpid()}.dat'
     with open(filename, 'w') as file:
@@ -45,11 +45,11 @@ def run_sequential(num_processes, task, arg):
 
 if __name__ == '__main__':
     num_processes = 4
-    fib_number = 100000  # Larger Fibonacci number for more CPU usage
-    list_size = 1000000  # Size of the list for memory-intensive task
-    io_size = 10000     # Number of lines for I/O-intensive task
+    fib_number = 500000  # More demanding Fibonacci calculation
+    list_size = 10000000  # Larger list for memory-intensive task
+    io_size = 100000     # More data for I/O-intensive task
 
-    # Testing CPU-bound task (Fibonacci)
+    # Testing CPU-bound task
     cpu_parallel_time, _ = run_parallel(num_processes, fibonacci, fib_number)
     cpu_sequential_time, _ = run_sequential(num_processes, fibonacci, fib_number)
     print(f'CPU-bound Task (Parallel): {cpu_parallel_time:.2f} seconds')
