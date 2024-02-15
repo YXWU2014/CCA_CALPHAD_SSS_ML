@@ -121,12 +121,12 @@ cd CCA_CALPHAD_SSS_ML
 ```bash
 cd CCA_representation_ML
 git add -A
-git commit -m "update"
+git commit -m "ternary"
 git push origin main
 
 cd ..
 git add  -A
-git commit -m "update"
+git commit -m "retraining data"
 git push origin main
 ```
 
