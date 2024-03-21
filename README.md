@@ -121,12 +121,12 @@ cd CCA_CALPHAD_SSS_ML
 ```bash
 cd CCA_representation_ML
 git add -A
-git commit -m "Checking on microstructure one-hot-encoder"
+git commit -m "README"
 git push origin main
 
 cd ..
 git add  -A
-git commit -m "Checking on microstructure one-hot-encoder"
+git commit -m "update README"
 git push origin main
 ```
 
