@@ -61,12 +61,12 @@ cd CCA_CALPHAD_SSS_ML
 ```bash
 cd CCA_representation_ML
 git add -A
-git commit -m "update CITATION"
+git commit -m "update readme"
 git push origin main
 
 cd ..
 git add  -A
-git commit -m "update CITATION"
+git commit -m "update readme"
 git push origin main
 ``` -->
 
