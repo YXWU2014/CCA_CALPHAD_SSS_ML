@@ -1,4 +1,78 @@
-# Harnessing representation in exploring compositional complex alloys
+
+# Informing Combinatorial Exploration of Compositionally Complex Alloys
+
+## Introduction
+
+This repository helps to explain an integrated iterative workflow between computational methods (computational thermodynamics and multi-task learning neural networks) and combinatorial experimentation, to explore compositionally complex alloys (CCAs). The codebase includes several submodules implemented on different aspects of the research, ranging from computational thermodynamics calculations to machine learning algorithms.  
+
+<img src="Fig_1_workflow.png" width="500">
+
+## Structure
+
+- `./v6_A-B-C-D-E_Sputtering` - [repo](https://github.com/YXWU2014/combinatorial_mixing.git) contains codes for phase stabilities and solid solution strengthening calculations for permutative combinatorial mixed compositions.
+- `./CCA_representation_ML` - [machine learning workflow](https://github.com/YXWU2014/CCA_representation_ML.git) for multitask learning neural network of hardness and corrosion properties.
+- `./v6_A-B-C-D-E_Sputtering_ML` - computed structure and property results for permutative combinatorial mixed compositions (55 alloy families and 455,400 alloy compositions).
+
+## Getting Started
+
+### Tested dependencies
+
+- Python 3.9.16
+- Some key libraries listed in `requirements.txt`
+- For customised classes and functions, see `./CCA_representation_ML/utils`
+
+### How to use it
+
+Pull the repository to the local folder
+
+```bash
+git clone https://github.com/YXWU2014/CCA_CALPHAD_SSS_ML.git
+cd CCA_CALPHAD_SSS_ML
+```
+
+Add the submodule
+
+```bash
+git submodule add https://github.com/YXWU2014/CCA_representation_ML.git CCA_representation_ML
+
+git submodule add https://github.com/YXWU2014/combinatorial_mixing.git v6_A-B-C-D-E_Sputtering
+```
+
+Initialise and fetch the submodule
+
+```bash
+git submodule update --init --recursive
+git checkout main
+```
+
+## Acknowledgments
+
+The authors gratefully acknowledge the support of the European Union's Horizon 2020 research and innovation programme under [Grant Agreement No. 958457](https://doi.org/10.3030/958457). The content of this publication does not reflect the official opinion of the European Union. Responsibility for the information and views expressed herein lies entirely with the authors.
+
+<!-- ## License
+This project is licensed under the [MIT License](LICENSE.md) - see the LICENSE file for details. -->
+
+<!-- 
+```bash
+cd CCA_CALPHAD_SSS_ML
+
+```
+
+```bash
+cd CCA_representation_ML
+git add -A
+git commit -m "update readme"
+git push origin main
+
+cd ..
+git add  -A
+git commit -m "update readme"
+git push origin main
+``` -->
+
+<!-- 
+
+# Informing combinatorial exploration of compositionally complex alloys
 
 This repository provides a platform for performing calculations and evaluations on quinary alloys A-B-C-D-E using computational thermodynamics and machine learning techniques. It focuses on modelling the phase stability and solid solution strengthening, along with hardness and corrosion pitting potential evaluation.
 
@@ -38,11 +112,6 @@ The directory structure and functionalities are described as follows:
     |-- SputteringCompoMapNormalised.dat
     |-- v6_A_B_C_D_E_Gmin_FullEquil_SputterCompo_batch.m
     |-- v6_A_B_C_D_E_SSS_SputterCompo_batch.m
-
-
-
-
-
 
     |-- v6_A-B-C-D-E_Sputtering_ML
 
@@ -89,46 +158,9 @@ pip install scikit-learn pandas matplotlib seaborn shap
     |-- CCA_CALPHAD_SSS_ML
         |-- CCA_representation_ML
         |-- ...
-```
-
-**Pull the repository to the local folder**
-
-```bash
-git clone https://github.com/YXWU2014/CCA_CALPHAD_SSS_ML.git
-cd CCA_CALPHAD_SSS_ML
-```
-
-**Add the submodule**
-
-```bash
-git submodule add https://github.com/YXWU2014/CCA_representation_ML.git CCA_representation_ML
-```
-
-**Initialise and fetch the submodule**
-
-```bash 
-git submodule update --init --recursive
-git checkout main
-```
+``` -->
 
 <!-- **Commit and push local changes to GitHub**
-
-```bash
-cd CCA_CALPHAD_SSS_ML
-
-```
-
-```bash
-cd CCA_representation_ML
-git add -A
-git commit -m "update submodules"
-git push origin main
-
-cd ..
-git add  -A
-git commit -m "update submodules"
-git push origin main
-```
 
 **Pull the latest repository to the local folder (point to `main` branch)**
 
@@ -145,71 +177,3 @@ git pull origin main
 cd ..
 ```
 -->
-
-#### Used BO search space hyperparameters
-
-- small space:
-
-```python
-if Flag_BO_search:
-    # Define the search space for hyperparameters
-    search_space_NNF_NNH_NNC = [{'name': 'NNF_num_nodes',   'type': 'discrete',  'domain': (32, 64, 128, 256)},  # 0: NNF_num_nodes
-                                {'name': 'NNF_num_layers',  'type': 'discrete',
-                                    'domain': (1, 2, 3, 4, 5)},  # 1: NNF_num_layers
-                                {'name': 'NNH_num_nodes',   'type': 'discrete',
-                                    'domain': (32, 64, 128)},  # 2: NNH_num_nodes
-                                {'name': 'NNH_num_layers',  'type': 'discrete',
-                                    'domain': (1, 2, 3)},  # 3: NNH_num_layers
-                                {'name': 'NNC_num_nodes',   'type': 'discrete',
-                                    'domain': (32, 64, 128)},  # 4: NNC_num_nodes
-                                {'name': 'NNC_num_layers',  'type': 'discrete',
-                                    'domain': (1, 2, 3)},  # 5: NNC_num_layers
-                                {'name': 'NNF_dropout',     'type': 'continuous',
-                                    'domain': (0.1)},         # 6: NNF_dropout
-                                {'name': 'NNH_NNC_dropout', 'type': 'continuous',
-                                    'domain': (0.1)},         # 7: NNH_NNC_dropout
-                                {'name': 'loss_class',      'type': 'discrete',
-                                    'domain': (0)},             # 8: loss_class
-                                {'name': 'learning_rate_H', 'type': 'discrete',
-                                    'domain': (0.0001, 0.0005)},     # 9: learning_rate_H
-                                {'name': 'learning_rate_C', 'type': 'discrete',
-                                    'domain': (0.0001, 0.0005)},     # 10: learning_rate_C
-                                {'name': 'batch_size_H',    'type': 'discrete',
-                                    'domain': (16, 32, 64)},  # 11: batch_size_H
-                                {'name': 'N_epochs_local',  'type': 'discrete',  'domain': (1, 2, 3)}]       # 12: N_epochs_global
-```
-
-- large space:
-
-```python
-if Flag_BO_search:
-    # Define the search space for hyperparameters
-
-    # loss_encoder == 0: mean_squared_error
-    # loss_encoder == 1: mean_absolute_error
-
-    search_space_NNF_NNH_NNC = [{'name': 'NNF_num_nodes',   'type': 'discrete',  'domain': (32, 64, 128, 256)},  # 0: NNF_num_nodes
-                                {'name': 'NNF_num_layers',  'type': 'discrete',
-                                    'domain': (1, 2, 3, 4, 5, 6)},  # 1: NNF_num_layers
-                                {'name': 'NNH_num_nodes',   'type': 'discrete',
-                                    'domain': (32, 64, 128, 256)},  # 2: NNH_num_nodes
-                                {'name': 'NNH_num_layers',  'type': 'discrete',
-                                    'domain': (1, 2, 3, 4, 5, 6)},  # 3: NNH_num_layers
-                                {'name': 'NNC_num_nodes',   'type': 'discrete',
-                                    'domain': (32, 64, 128, 256)},  # 4: NNC_num_nodes
-                                {'name': 'NNC_num_layers',  'type': 'discrete',
-                                    'domain': (1, 2, 3, 4, 5, 6)},  # 5: NNC_num_layers
-                                {'name': 'NNF_dropout',     'type': 'continuous',
-                                    'domain': (0.1, 0.5)},         # 6: NNF_dropout
-                                {'name': 'NNH_NNC_dropout', 'type': 'continuous',
-                                    'domain': (0.1, 0.5)},         # 7: NNH_NNC_dropout
-                                {'name': 'loss_class',      'type': 'discrete',
-                                    'domain': (0, 1)},             # 8: loss_class
-                                {'name': 'learning_rate_H', 'type': 'continuous',
-                                    'domain': (0.0001, 0.01)},     # 9: learning_rate_H
-                                {'name': 'learning_rate_C', 'type': 'continuous',
-                                    'domain': (0.0001, 0.01)},     # 10: learning_rate_C
-                                {'name': 'batch_size_H',    'type': 'discrete',
-                                    'domain': (16, 32, 64, 128)},  # 11: batch_size_H
-                                {'name': 'N_epochs_local',  'type': 'discrete',  'domain': (1, 2, 3, 4)}]       # 12: N_epochs_global
-```

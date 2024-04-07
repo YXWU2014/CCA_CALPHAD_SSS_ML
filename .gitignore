@@ -1,6 +1,6 @@
 # Ignore everything under v6_A-B-C-D-E_Sputtering/
 v6_A-B-C-D-E_Sputtering/*
 v6_A-B-C-D-E_Sputtering_backup/*
-
+archive/*
 # # Except folders ending with Si_Sputtering
 # !v6_A-B-C-D-E_Sputtering/*Fe_Cr_Ni_Co_V_Sputtering/
