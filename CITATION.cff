@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "temporary citation"
+authors:
+  - family-names: "Wu"
+    given-names: "Y.X."
+    orcid: "0000-0002-1014-9824"
+    affiliation: "Max Planck Institute for Sustainable Materials"
+title: "Informing Combinatorial Exploration of Compositionally Complex Alloys"
+version: "1.0.0"
+# date-released: 2024-04-06
+url: "https://github.com/YXWU2014/CCA_CALPHAD_SSS_ML.git"
+abstract: ""
+# keywords:
+#   - "Computational Thermodynamics"
+#   - "Machine Learning"
+#   - "Combinatorial Experimentation"
+#   - "Compositionally Complex Alloys"
+#   - "Materials Science"
+# license: "MIT"
+repository-code: "https://github.com/YXWU2014/CCA_CALPHAD_SSS_ML.git"
