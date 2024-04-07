@@ -5,7 +5,7 @@
 
 This repository helps to explain an integrated iterative workflow between computational methods (computational thermodynamics and multi-task learning neural networks) and combinatorial experimentation, to explore compositionally complex alloys (CCAs). The codebase includes several submodules implemented on different aspects of the research, ranging from computational thermodynamics calculations to machine learning algorithms.  
 
-<img src="Fig_1_workflow.png" width="500">
+<img src="Fig_1_workflow.png" width="1000">
 
 ## Structure
 
