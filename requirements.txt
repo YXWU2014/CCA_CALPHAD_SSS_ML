@@ -1,9 +1,43 @@
-umap-learn==0.5.3
+# --- Core DL stack ---
 tensorflow==2.11.0
 keras==2.11.0
-GPyOpt==1.2.6
+tensorflow-estimator==2.11.0
+tensorboard==2.11.2
+protobuf==3.19.6
+gast==0.4.0
+opt-einsum==3.3.0
+absl-py==1.4.0
+
+# --- Numerical / SciPy stack ---
+numpy==1.24.4
 scipy==1.10.0
-tabulate==0.9.0
-matplotlib==3.7.1
 pandas==1.5.3
+
+# --- Plotting ---
+matplotlib==3.7.1
 seaborn==0.12.2
+
+# --- SHAP + deps (kept at 2023-compatible levels) ---
+shap==0.41.0
+numba==0.57.1
+llvmlite==0.40.1
+
+# --- ML utilities ---
+scikit-learn==1.2.2
+joblib==1.2.0
+threadpoolctl==3.1.0
+
+# --- Dimensionality reduction (UMAP) ---
+umap-learn==0.5.3
+pynndescent==0.5.10
+
+# --- I/O and misc ---
+h5py==3.8.0
+openpyxl==3.1.2
+tabulate==0.9.0
+tqdm==4.65.0
+
+# --- Bayesian opt stack you use ---
+GPy==1.13.2
+GPyOpt==1.2.6
+paramz==0.9.6
