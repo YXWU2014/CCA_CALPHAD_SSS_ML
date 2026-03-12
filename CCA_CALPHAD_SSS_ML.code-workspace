@@ -8,8 +8,7 @@
     "git.ignoreLimitWarning": true,
     "workbench.editorAssociations": {
       "*.copilotmd": "vscode.markdown.preview.editor",
-      "file:/**/*.xlsx": "jupyter-data-wrangler",
-      "*.xlsx": "jupyter-data-wrangler"
+      "file:/**/*.xlsx": "jupyter-data-wrangler"
     }
   }
 }
