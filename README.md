@@ -15,13 +15,20 @@ This repository helps to explain an integrated iterative workflow between comput
 
 ## Getting Started
 
-### Tested dependencies
+### Tested dependencies and pip install
 
 - Python 3.9.16
-- Some key libraries listed in `requirements.txt`
+- Key libraries listed in `requirements.txt`
 - For customised classes and functions, see `./CCA_representation_ML/utils`
+- Install dependencies using pip with a Python 3.9.16 environment:
 
-### How to use it
+```bash
+python -m pip install --upgrade pip setuptools wheel
+pip install -r requirements.txt
+```
+
+
+### How to use the repo
 
 Pull the repository to the local folder
 
