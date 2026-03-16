@@ -1,25 +1,28 @@
-
 # Informing Combinatorial Exploration of Compositionally Complex Alloys
 
-## Introduction
+This repository documents an integrated workflow that combines computational thermodynamics, solid-solution strengthening (SSS), and multitask machine learning to explore compositionally complex alloys (CCAs). The codebase is organized into submodules that cover precomputed alloy-property data and the downstream ML workflow.
 
-This repository helps to explain an integrated iterative workflow between computational methods (computational thermodynamics and multi-task learning neural networks) and combinatorial experimentation, to explore compositionally complex alloys (CCAs). The codebase includes several submodules implemented on different aspects of the research, ranging from computational thermodynamics calculations to machine learning algorithms.  
+- CALPHAD phase-stability and solid-solution-strengthening (SSS) calculations
+- multitask ML for hardness and corrosion prediction
 
 <img src="Fig_1_workflow.png" width="1000">
 
-## Structure
+## Repository Layout
 
-- `./v6_A-B-C-D-E_Sputtering` - [repo](https://github.com/YXWU2014/combinatorial_mixing.git) contains codes for phase stabilities and solid solution strengthening calculations for permutative combinatorial mixed compositions.
-- `./CCA_representation_ML` - [machine learning workflow](https://github.com/YXWU2014/CCA_representation_ML.git) for multitask learning neural network of hardness and corrosion properties.
-- `./v6_A-B-C-D-E_Sputtering_ML` - computed structure and property results for permutative combinatorial mixed compositions (55 alloy families and 455,400 alloy compositions).
+- `./v6_A-B-C-D-E_Sputtering`: [CALPHAD and SSS workflow](https://github.com/YXWU2014/combinatorial_mixing.git) submodule for permutative combinatorial mixed compositions
+- `./CCA_representation_ML`: [ML workflow](https://github.com/YXWU2014/CCA_representation_ML.git) submodule for hardness and corrosion model training, evaluation, prediction, and explainability
+- `./v6_A-B-C-D-E_Sputtering_ML`: precomputed CALPHAD/SSS structure-property results for 55 alloy families and 455,400 alloy compositions
+- `v6_A_B_C_D_E_Gmin_FullEquil_SputterCompo_master.m`: root entrypoint for phase-stability generation
+- `v6_A_B_C_D_E_SSS_SputterCompo_master.m`: root entrypoint for SSS generation
+- `SputteringCompoMapNormalised.dat`: composition-grid input used by the MATLAB stages
 
 ## Getting Started
 
-### Tested dependencies and pip install
+### Tested Dependencies and Pip Installation
 
 - Python 3.9.16
 - Key libraries listed in `requirements.txt`
-- For customised classes and functions, see `./CCA_representation_ML/utils`
+- For customized classes and functions, see `./CCA_representation_ML/utils`
 - Install dependencies using pip with a Python 3.9.16 environment:
 
 ```bash
@@ -30,157 +33,47 @@ pip install -r requirements.txt
 
 ### How to use the repo
 
-Pull the repository to the local folder
+Clone the repository:
 
 ```bash
 git clone https://github.com/YXWU2014/CCA_CALPHAD_SSS_ML.git
 cd CCA_CALPHAD_SSS_ML
 ```
 
-Add the submodule
-
-```bash
-git submodule add https://github.com/YXWU2014/CCA_representation_ML.git CCA_representation_ML
-
-git submodule add https://github.com/YXWU2014/combinatorial_mixing.git v6_A-B-C-D-E_Sputtering
-```
-
-Initialise and fetch the submodule
+Initialize and fetch the submodules:
 
 ```bash
 git submodule update --init --recursive
 git checkout main
 ```
 
+### MATLAB / Thermo-Calc requirements for the CALPHAD stage
+
+The MATLAB entry scripts invoke Thermo-Calc toolbox functions, so a full CALPHAD rerun requires MATLAB, a working Thermo-Calc setup with the `tc_*` MATLAB interface enabled, access to the `TCHEA4` database, and the local helper library expected by the scripts. If those dependencies are unavailable, the ML stage can still be run against the precomputed data already stored in `v6_A-B-C-D-E_Sputtering_ML/`.
+
+## Run This Repo
+
+### Stage 1: CALPHAD phase stability
+
+This stage is handled in the [`v6_A-B-C-D-E_Sputtering`](https://github.com/YXWU2014/combinatorial_mixing.git) submodule. Run `v6_A_B_C_D_E_Gmin_FullEquil_SputterCompo_master.m` from the repository root in MATLAB. This stage uses `SputteringCompoMapNormalised.dat` to enumerate five-element permutations, compute minimum-G and full-equilibrium phase information, and generate phase-stability figures and summary outputs.
+
+### Stage 2: solid-solution strengthening
+
+This stage is also handled in the [`v6_A-B-C-D-E_Sputtering`](https://github.com/YXWU2014/combinatorial_mixing.git) submodule. Run `v6_A_B_C_D_E_SSS_SputterCompo_master.m` from the repository root in MATLAB. This stage reuses the same sputtering composition grid, computes effective elastic and misfit quantities for FCC compositions, and exports strengthening tables and plots for each permutation.
+
+### Stage 3: computed-data handoff to ML
+
+The ML workflow consumes the computed permutation-composition results generated upstream from the [`v6_A-B-C-D-E_Sputtering`](https://github.com/YXWU2014/combinatorial_mixing.git) submodule and assembled under `v6_A-B-C-D-E_Sputtering_ML/v6_A-B-C-D-E_Sputtering_ML_All_Calc/`, together with the associated CALPHAD and SSS outputs.
+
+### Stage 4: ML training, evaluation, and prediction
+
+This stage is handled in the [`CCA_representation_ML`](https://github.com/YXWU2014/CCA_representation_ML.git) submodule. It is the point where the workflow interfaces with experimental data, combining cleaned hardness and corrosion datasets with CALPHAD/SSS-derived composition inputs in a multitask neural-network pipeline. The workflow reads curated datasets from `01_Dataset_Cleaned/`, uses the main notebooks in `03_Model_Train_Evaluate_Predict/`, and writes trained-model and prediction outputs under `04_Model_Saved/`. For more detail on the ML workflow, notebook structure, and execution steps, see the submodule documentation directly.
+
+## Submodule Guides
+
+- CALPHAD / SSS details: `v6_A-B-C-D-E_Sputtering/README.md`
+- ML workflow details: `CCA_representation_ML/README.md`
+
 ## Acknowledgments
 
 The authors gratefully acknowledge the support of the European Union's Horizon 2020 research and innovation programme under [Grant Agreement No. 958457](https://doi.org/10.3030/958457). The content of this publication does not reflect the official opinion of the European Union. Responsibility for the information and views expressed herein lies entirely with the authors.
-
-<!-- ## License
-This project is licensed under the [MIT License](LICENSE.md) - see the LICENSE file for details. -->
-
-<!-- 
-```bash
-cd CCA_CALPHAD_SSS_ML
-
-```
-
-```bash
-cd CCA_representation_ML
-git add -A
-git commit -m "update readme"
-git push origin main
-
-cd ..
-git add  -A
-git commit -m "update readme"
-git push origin main
-``` -->
-
-<!-- 
-
-# Informing combinatorial exploration of compositionally complex alloys
-
-This repository provides a platform for performing calculations and evaluations on quinary alloys A-B-C-D-E using computational thermodynamics and machine learning techniques. It focuses on modelling the phase stability and solid solution strengthening, along with hardness and corrosion pitting potential evaluation.
-
-## Objectives
-
-This repository serves to:
-
-- Perform batch calculations for quinary alloys (A-B-C-D-E) using computational thermodynamics.
-  - Model phase stability under full equilibrium and minimum Gibbs energy conditions.
-  - Model solid solution strengthening for the targeted alloys.
-- Evaluate hardness and corrosion pitting potential using a multitask neural network model (based on the `CCA_representation_ML` submodule).
-- Facilitate compositional sampling that takes the representation of combinatorial physical vapor deposition (`SputteringCompoMapNormalised.dat`) and permutations of different mixes of neighbouring elements.
-
-## Visuals
-
-The computational results can be illustrated through visuals such as the plots below, demonstrating the FCC alloy formation tendency under varying thermodynamic evaluations and property evaluations by physical-based models. They also show the solid solution strengthening and the properties computed from the neural network models.
-
-![sns_plot_30](./sns_plot_30.png)
-
-![plot_phase stability](<v6_A-B-C-D-E_Sputtering_ML/v6_A-B-C-D-E_Sputtering_ML_Exp/plot_phase stability.png>)
-
-## Citation
-
-For more information, refer to:
-
-- Wu et al., "Harnessing representation in exploring compositional complex alloys [under review]", 2023.
-
-## Repository Structure and Features
-
-The directory structure and functionalities are described as follows:
-
-```bash
-|-- CCA_CALPHAD_SSS_ML
-
-    |-- v6_A_B_C_D_E_Gmin_FullEquil_SputterCompo_master.m
-    |-- v6_A_B_C_D_E_SSS_SputterCompo_master.m
-    |-- SputteringCompoMapNormalised.dat
-    |-- v6_A_B_C_D_E_Gmin_FullEquil_SputterCompo_batch.m
-    |-- v6_A_B_C_D_E_SSS_SputterCompo_batch.m
-
-    |-- v6_A-B-C-D-E_Sputtering_ML
-
-    |-- CCA_representation_ML
-
-    |-- sns_plot.ipynb
-
-|-- v6_Fe_Cr_Ni_Al_Si_Sputtering (not in this repository)
-|-- v6_Fe_Cr_Ni_Al_Ta_Sputtering (not in this repository)
-|-- ...
-
-```
-
-#### phase stability and solid solution strengthening calculation
-
-`v6_A_B_C_D_E_Gmin_FullEquil_SputterCompo_master.m` performs calculations of phase stability under full equilibrium and minimum Gibbs energy, aiming at obtaining FCC alloys.
-`v6_A_B_C_D_E_SSS_SputterCompo_master.m` models the solid solution strengthening for the FCC phase under the same sampled compositions.
-
-#### Machine Learning Submodule
-
-`CCA_representation_ML`: This machine learning submodule, maintained in a separate repository, is utilized for evaluating hardness and corrosion pitting potential.
-
-#### Plotting
-
-`sns_plot.ipynb` to generate summary plots
-
-## tested working environment
-
-```bash
-conda create --name tf_1-env python=3.7
-conda activate tf_1-env
-
-pip install --upgrade pip
-pip install tensorflow==1.14
-
-pip install scikit-learn pandas matplotlib seaborn shap
-
-```
-
-## Download the repositories `CCA_CALPHAD_SSS_ML` and its submodule `CCA_representation_ML` to your local drive
-
-```bash
-|-- your local drive
-    |-- CCA_CALPHAD_SSS_ML
-        |-- CCA_representation_ML
-        |-- ...
-``` -->
-
-<!-- **Commit and push local changes to GitHub**
-
-**Pull the latest repository to the local folder (point to `main` branch)**
-
-```bash
-cd CCA_CALPHAD_SSS_ML
-```
-
-```bash
-git pull origin main
-
-cd CCA_representation_ML
-git checkout main
-git pull origin main
-cd ..
-```
--->
